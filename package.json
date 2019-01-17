@@ -4,10 +4,11 @@
   "description": "Coming soon",
   "main": "index.js",
   "scripts": {
-    "babel-build": "babel src/js -d public/node",
+    "start:dev": "webpack-dev-server",
+    "babel-build": "babel src/js -d dist/node",
     "babel-build-lambda": "npm run clean-lambda && babel src/js -d lambda/public/node",
-    "build-html": "node public/node/generate-html.js",
-    "clean": "rm -rf public/assets && rm -rf public/node",
+    "build-html": "node dist/node/generate-html.js",
+    "clean": "rm -rf dist/assets && rm -rf dist/node",
     "clean-lambda": "rm -rf lambda",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npm run clean && webpack --mode development --watch",
@@ -30,6 +31,7 @@
   },
   "homepage": "https://github.com/Daveiano/react-static-pages#readme",
   "dependencies": {
+    "bootstrap": "4.2.1",
     "css-reset-and-normalize-sass": "0.1.2",
     "fs-extra": "7.0.1",
     "mkdirp": "0.5.1",
@@ -42,11 +44,13 @@
     "redux": "4.0.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "7.0.0",
     "autoprefixer": "9.4.5",
-    "babel-cli": "6.26.0",
-    "babel-core": "6.26.3",
     "babel-loader": "8.0.5",
-    "babel-preset-env": "1.7.0",
     "css-loader": "2.1.0",
     "eslint": "5.12.0",
     "eslint-plugin-react": "7.12.4",
@@ -59,6 +63,7 @@
     "style-loader": "0.23.1",
     "url-loader": "1.1.2",
     "webpack": "4.28.4",
-    "webpack-cli": "3.2.1"
+    "webpack-cli": "3.2.1",
+    "webpack-dev-server": "^3.1.14"
   }
 }

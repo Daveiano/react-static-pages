@@ -1,0 +1,23 @@
+/* Reset and normalize */
+@import '~css-reset-and-normalize-sass/scss/reset-and-normalize';
+
+$menu-grey: rgb(147, 147, 147);
+$showreel-sub-bg: rgb(28, 28, 28);
+$team-bg: rgb(199, 199, 199);
+$hardfacts: rgb(255, 0, 123);
+
+@import 'bootstrap_custom';
+@import '~bootstrap/scss/bootstrap.scss';
+
+body, html{
+  overflow: visible;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: normal;
+  .page, .front-page main {
+    overflow-x: hidden;
+  }
+}
