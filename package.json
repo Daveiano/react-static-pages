@@ -1,0 +1,64 @@
+{
+  "name": "react-static-pages",
+  "version": "0.1.0-alpha1",
+  "description": "Coming soon",
+  "main": "index.js",
+  "scripts": {
+    "babel-build": "babel src/js -d public/node",
+    "babel-build-lambda": "npm run clean-lambda && babel src/js -d lambda/public/node",
+    "build-html": "node public/node/generate-html.js",
+    "clean": "rm -rf public/assets && rm -rf public/node",
+    "clean-lambda": "rm -rf lambda",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm run clean && webpack --mode development --watch",
+    "build": "npm run clean && npm run babel-build && webpack --mode production && npm run build-html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Daveiano/react-static-pages.git"
+  },
+  "keywords": [
+    "ReactJS",
+    "NodeJS",
+    "HTML",
+    "Webpack"
+  ],
+  "author": "daveiano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Daveiano/react-static-pages/issues"
+  },
+  "homepage": "https://github.com/Daveiano/react-static-pages#readme",
+  "dependencies": {
+    "css-reset-and-normalize-sass": "0.1.2",
+    "fs-extra": "7.0.1",
+    "mkdirp": "0.5.1",
+    "react": "16.7.0",
+    "react-dom": "16.7.0",
+    "react-redux": "6.0.0",
+    "react-router": "4.3.1",
+    "react-router-dom": "4.3.1",
+    "readdir": "0.1.0",
+    "redux": "4.0.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "9.4.5",
+    "babel-cli": "6.26.0",
+    "babel-core": "6.26.3",
+    "babel-loader": "8.0.5",
+    "babel-preset-env": "1.7.0",
+    "css-loader": "2.1.0",
+    "eslint": "5.12.0",
+    "eslint-plugin-react": "7.12.4",
+    "file-loader": "3.0.1",
+    "mini-css-extract-plugin": "0.5.0",
+    "node-sass": "4.11.0",
+    "postcss-easy-import": "3.0.0",
+    "postcss-loader": "3.0.0",
+    "sass-loader": "7.1.0",
+    "style-loader": "0.23.1",
+    "url-loader": "1.1.2",
+    "webpack": "4.28.4",
+    "webpack-cli": "3.2.1"
+  }
+}
