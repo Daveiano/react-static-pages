@@ -43,7 +43,7 @@ const store = createStore(appReducer, appReducerDefaultState),
         <meta property="og:title" content="" />
         <meta property="og:type" content="website"/>
         <title></title>
-        <link async rel="stylesheet" href="/dist/assets/${css[0]}"/>
+        <link rel="stylesheet" href="/dist/assets/${css[0]}"/>
       </head>
       <body>
      

@@ -1,4 +1,4 @@
-const actions = () => {};
+const action = () => ({});
 
 
-export { actions };
+export { action };

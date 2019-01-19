@@ -11,18 +11,27 @@ import { connect } from 'react-redux';
 import FrontPage from './pages/front-page';
 import ScrollRestoration from './scroll-restoration';
 
+/**
+ * Redux mapStateToProps Function to get information from Redux Store.
+ * @param {Object} reduxStore - Redux Store State
+ * @returns {Object} - Relevant Data for App Component from Redux Store.
+ */
+const mapStateToProps = reduxStore => ({ reduxStore });
+
 class App extends Component {
+  state = {};
+
   render() {
     return ([
       <ScrollRestoration key="scroll-restoration" />,
-      <header key={'header'} />,
-      <Switch key={'switch'}>
-        <Route component={FrontPage} exact strict path={'/'} />
-        <Redirect to={{ pathname: '/' }} />
-      </Switch>,
-      <footer key={'footer'} />
+      <main key={"main"}>
+        <Switch key={'switch'}>
+          <Route component={FrontPage} exact strict path={'/'} />
+          <Redirect to={{ pathname: '/' }} />
+        </Switch>
+      </main>
     ]);
   }
 }
 
-export default withRouter(connect()(App));
+export default withRouter(connect(mapStateToProps)(App));

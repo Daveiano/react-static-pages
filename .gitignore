@@ -65,3 +65,5 @@ typings/
 .idea
 
 dist
+
+index.html
