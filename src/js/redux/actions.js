@@ -1,0 +1,4 @@
+const action = () => ({});
+
+
+export { action };
