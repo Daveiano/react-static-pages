@@ -9,14 +9,14 @@ Template project structure for a ReactJS driven static HTML rendered website. JS
 * Generating HTML and saving to file via NodeJS 
 
 ## Usage
-###Development
-####`npm run dev`
+### Development
+#### `npm run dev`
 Description...
-###Build
-####`npm run build`
+### Build
+#### `npm run build`
 Description...
-###Deployment
-####`./scripts/deploy-s3.sh`
+### Deployment
+#### `./scripts/deploy-s3.sh`
 Description...
 
 ## Todo
