@@ -8,6 +8,7 @@ import fs from 'fs';
 import path from 'path';
 import readdir from 'readdir';
 import mkdirp from 'mkdirp';
+import ejs from 'ejs';
 
 // Components
 import App from './app';
@@ -56,7 +57,8 @@ const store = createStore(appReducer, appReducerDefaultState),
 
 fs.writeFile(
   `${__dirname}/../../index.html`,
-  renderFullPage(markup('/'), preloadedState).replace('[\'preloadedState\']', JSON.stringify(store.getState()).replace(/</g, '\\u003c').replace(/\u2028/g, '')),
+  ejs.render(str, data, options),
+  //renderFullPage(markup('/'), preloadedState).replace('[\'preloadedState\']', JSON.stringify(store.getState()).replace(/</g, '\\u003c').replace(/\u2028/g, '')),
   errWriteFile => {
     if (errWriteFile) {
       return console.error(errWriteFile);
