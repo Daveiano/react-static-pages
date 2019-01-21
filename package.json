@@ -2,7 +2,6 @@
   "name": "react-static-pages",
   "version": "1.1.0",
   "description": "Coming soon",
-  "main": "index.js",
   "scripts": {
     "start:dev": "webpack-dev-server",
     "babel-build": "babel src/js -d dist/node && cp -r src/ejs dist/node/ejs",
