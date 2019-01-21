@@ -15,12 +15,8 @@ Description...
 ### Build
 #### `npm run build`
 Description...
-### Deployment
-#### `./scripts/deploy-s3.sh`
-Description...
 
 ## Todo
 * webpack-dev-server vs nodemon dev script
-* s3 Sync Script
-* content as json template structure
-* eslint config
+* https://developers.google.com/web/fundamentals/web-app-manifest/
+* Service Worker
