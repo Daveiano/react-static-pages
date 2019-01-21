@@ -30,39 +30,22 @@ const store = createStore(appReducer, appReducerDefaultState),
         <App />
       </StaticRouter>
     </Provider>
-  ),
-  renderFullPage = (renderedMarkup, preloadedReduxState) =>
-    `<!doctype html>
-      <html lang="de">
-      <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="" />
-        <meta name="keywords" content="" />
-        <meta property="og:title" content="" />
-        <meta property="og:type" content="website"/>
-        <title></title>
-        <link rel="stylesheet" href="/dist/assets/${css[0]}"/>
-      </head>
-      <body>
-     
-      <div id="app">${renderedMarkup}</div>
-      
-      <script>window.__PRELOADED_STATE__ = ['preloadedState']</script>
-      <script async type="text/javascript" src="/dist/assets/${bundleJs[0]}" ></script>
-      </body>
-    </html>`;
+  );
 
-fs.writeFile(
-  `${__dirname}/../../index.html`,
-  ejs.render(str, data, options),
-  //renderFullPage(markup('/'), preloadedState).replace('[\'preloadedState\']', JSON.stringify(store.getState()).replace(/</g, '\\u003c').replace(/\u2028/g, '')),
-  errWriteFile => {
-    if (errWriteFile) {
-      return console.error(errWriteFile);
-    }
+ejs.renderFile(`${__dirname}/ejs/index.ejs`, {
+  content: markup('/'),
+  css: css[0],
+  preloadedState: JSON.stringify(store.getState()).replace(/</g, '\\u003c').replace(/\u2028/g, ''),
+  bundleJs: bundleJs[0]
+}, (err, str) => {
+  fs.writeFile(
+    `${__dirname}/../../index.html`,
+    str,
+    errWriteFile => {
+      if (errWriteFile) {
+        return console.error(errWriteFile);
+      }
 
-    console.log('Finished writing index.html');
-  });
+      console.log('Finished writing index.html');
+    });
+});

@@ -10,12 +10,12 @@
     <meta property="og:title" content="" />
     <meta property="og:type" content="website"/>
     <title></title>
-    <link rel="stylesheet" href="/dist/assets/${css[0]}"/>
+    <link rel="stylesheet" href="/dist/assets/<%- css %>"/>
 </head>
 <body>
     <div id="app"><%- content %></div>
 
-    <%- preloadedState %>
-    <%- bundleJs %>
+    <script>window.__PRELOADED_STATE__ = <%- preloadedState %>;</script>
+    <script async type="text/javascript" src="/dist/assets/<%- bundleJs %>"></script>
 </body>
 </html>

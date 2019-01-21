@@ -5,11 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start:dev": "webpack-dev-server",
-    "babel-build": "babel src/js -d dist/node",
-    "babel-build-lambda": "npm run clean-lambda && babel src/js -d lambda/public/node",
+    "babel-build": "babel src/js -d dist/node && cp -r src/ejs dist/node/ejs",
     "build-html": "node dist/node/generate-html.js",
     "clean": "rm -rf dist/assets && rm -rf dist/node",
-    "clean-lambda": "rm -rf lambda",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npm run clean && webpack --mode development --watch",
     "build": "npm run clean && npm run babel-build && webpack --mode production && npm run build-html"
