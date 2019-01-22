@@ -6,10 +6,11 @@
     "start:dev": "webpack-dev-server",
     "babel-build": "babel src/js -d dist/node && cp -r src/ejs dist/node/ejs",
     "build-html": "node dist/node/generate-html.js",
+    "copy-static": "mkdir --parents dist/static && cp src/manifest.json dist/static/manifest.json",
     "clean": "rm -rf dist/assets && rm -rf dist/node",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npm run clean && webpack --mode development --watch",
-    "build": "npm run clean && npm run babel-build && webpack --mode production && npm run build-html"
+    "dev": "npm run clean && npm run copy-static && webpack --mode development --watch",
+    "build": "npm run clean && npm run babel-build && webpack --mode production && npm run build-html && npm run copy-static"
   },
   "repository": {
     "type": "git",

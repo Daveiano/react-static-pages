@@ -1,0 +1,8 @@
+{
+  "short_name": "RSP",
+  "name": "React Static Pages",
+  "start_url": "/",
+  "background_color": "#FFFFFF",
+  "display": "standalone",
+  "theme_color": "#FFFFFF"
+}

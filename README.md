@@ -18,5 +18,4 @@ Description...
 
 ## Todo
 * webpack-dev-server vs nodemon dev script
-* https://developers.google.com/web/fundamentals/web-app-manifest/
 * Service Worker
