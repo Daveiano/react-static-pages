@@ -8,6 +8,9 @@ const PATHS = {
 
 const config = {
   entry: `${PATHS.app}/js/client.jsx`,
+  devServer: {
+    writeToDisk: true
+  },
   module: {
     rules: [
       {
