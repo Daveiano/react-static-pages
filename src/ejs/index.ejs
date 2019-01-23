@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="website"/>
+    <link rel="manifest" href="/dist/static/manifest.json">
+    <title></title>
+    <link rel="stylesheet" href="/dist/assets/<%- css %>"/>
+</head>
+<body>
+    <div id="app"><%- content %></div>
+
+    <script>window.__PRELOADED_STATE__ = <%- preloadedState %>;</script>
+    <script async type="text/javascript" src="/dist/assets/<%- bundleJs %>"></script>
+</body>
+</html>
