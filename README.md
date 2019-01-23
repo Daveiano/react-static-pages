@@ -9,13 +9,19 @@ Template project structure for a ReactJS driven static HTML rendered website. JS
 * Generating HTML with ejs and saving to file via NodeJS 
 
 ## Usage
+
 ### Development
 #### `npm run dev`
-Description...
+* Cleans up the dist/ folder (where the assets will be saved)
+* Copy static assets (e.g. manifest.json) to the dist/ folder
+* Transpiles the source files to ES5 for NodeJS and watches for changes to retranspile
+* Starting webpack-dev-server
+* Start nodemon to regenerate the HTML when changes are made
+
 ### Build
 #### `npm run build`
-Description...
-
-## Todo
-* webpack-dev-server vs nodemon dev script
-* Service Worker
+* Cleans up the dist/ folder (where the assets will be saved)
+* Transpiles the source files to ES5 for NodeJS
+* Webpack builds the bundle.js and style.css
+* Node builds the HTML file from the transpiled source files
+* Copy static assets (e.g. manifest.json) to the dist/ folder
